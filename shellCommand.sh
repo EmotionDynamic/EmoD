@@ -39,7 +39,7 @@ for file in *.csv
 	rm -rf "classification_$name""_sadness"
 	cd /c/Users/CoCo\ Lab/Downloads/emotionFiles
 	echo "Intensity files are transfered to emotionFiles Directory...."
-	py -3 nrcAndInflux.py $name
+	py -3 nrcAndInfluxDB.py $name
 	echo "Insertion in InfluxDB Succeed...."
 	mv "$name""_prediction_fear.csv" /c/Users/CoCo\ Lab/Downloads/emotionFiles/predictedBackup
 	mv "$name""_prediction_anger.csv" /c/Users/CoCo\ Lab/Downloads/emotionFiles/predictedBackup
