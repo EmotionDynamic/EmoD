@@ -102,8 +102,6 @@ def commentsCollection():
 def processFrom():
     memberComment = {}
     otherComment = {}
-    #with open("backup.json") as outfile:
-    #   backupJson = json.load(outfile)
     for fileItem in backupJson.values():
         for item in fileItem:
             for index in range(len(item)):
@@ -118,10 +116,8 @@ def processFrom():
                 finalCreatedDate=datetime(finalCreatedDate.year,finalCreatedDate.month,finalCreatedDate.day)
                 flag = 0
                 today = datetime.datetime.today()
-                #tillApril10='2019-04-10'
-                #tillApril10=datetime.datetime.strptime(tillApril10,'%Y-%m-%d')
                 initialComment = []
-                if authorAssociation == 'MEMBER' and today==finalCreatedDate: #today > dateForm and tillApril10 < dateForm:
+                if authorAssociation == 'MEMBER' and today==finalCreatedDate:
                     for key, value in memberComment.items():
                         if key == memberName:
                             warn = 0
@@ -149,7 +145,7 @@ def processFrom():
                         initialComment.append(commentTuple)
                         memberComment[memberName] = initialComment
 
-                if authorAssociation != 'MEMBER' and today==finalCreatedDate: #today > dateForm and tillApril10 < dateForm:
+                if authorAssociation != 'MEMBER' and today==finalCreatedDate: 
                     for key, value in otherComment.items():
                         if key == memberName:
                             warn = 0
